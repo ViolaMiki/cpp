@@ -1,9 +1,10 @@
 #include <iostream>
+#include <cmath>
 #include "Vector.h"
 using namespace std;
 
 
-int binSearch(Vector<int> let, int num, int lo, int hi, bool status){ 
+int binSearch(Vector<int> let, int num, int lo, int hi){ 
 	while (lo < hi){
 		int mi = (lo + hi) >> 1;
 		(num < let[mi]) ? hi = mi : lo = mi + 1;
@@ -48,16 +49,20 @@ int main(){
 
 	for ( int i = count; i != 0; --i ){
 		int lo, hi;
-		bool status = FALSE;
 		cin >> lo >> hi;
-		int loSt = binSearch ( let, lo, 0, num, &status );
-		int hiSt = binSearch ( let, hi, loSt, num, &status );
+		int loSt = binSearch ( let, lo, 0, num );
+		int hiSt = binSearch ( let, hi, loSt, num );
+		int result = 0;
+		cout<<loSt<<endl;
+		cout<<hiSt<<endl;
 		if ( lo == let[num-1] ){
 			cout << 1 << endl;
-		}else if( loSt == hiSt || loSt == -1 ){
-			cout << hiSt - loSt << endl;
+		}else if( loSt == hiSt || loSt == -1 || hiSt == -1){
+			result = (hiSt>loSt)?hiSt-loSt:loSt-hiSt;
+			cout << result << endl;
 		}else{
-		    cout << hiSt - loSt + 1 << endl;
+			result = (hiSt>loSt)?hiSt-loSt:loSt-hiSt + 1;
+		    cout << result << endl;
 		}
 	}
 		
