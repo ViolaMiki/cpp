@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 int main() {
@@ -8,9 +9,7 @@ int main() {
     int result = 0;
     while (a >= 1) {
         int num = a%10;
-        cout << result << '-' << a << 'i' << i << "num" << num << '\n';
-        result = result + (num*(2^i));
-        ++i;
+        result += num*pow(2,i++);
         a = a/10;
     }
     cout << result << endl;
