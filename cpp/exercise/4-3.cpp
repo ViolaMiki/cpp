@@ -22,10 +22,17 @@ public:
             cout << -_c/_b << endl;
         }
 
-        float d = _b*_b - 4_a_c;
+        float d = _b*_b - 4*_a*_c;
         if (d > 0) {
             cout << 1 << '\n';
-            cout << (-_b + sqrt(d))/2*_a
+            cout << (-_b + sqrt(d))/2*_a << ' ' << (-_b - sqrt(d))/2*_a << endl;
+        }
+        if (d = 0) {
+            cout << 2 << '\n';
+            cout << -_b/2*_a << endl;
+        }
+        if (d < 0) {
+            cout << 3 << endl;
         }
     }
 };
