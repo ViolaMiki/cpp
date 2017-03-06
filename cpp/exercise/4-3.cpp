@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 class Equation{
 private:
@@ -11,28 +12,35 @@ public:
     }
     void solve(){
         cout.precision(2);
-        if (_a == _b == _c == 0) {
+        if (_a == 0 && _b == 0 && _c == 0) {
             cout << 5 << endl;
+            return;
         }
-        if (_a == _b == 0 && _c != 0) {
+        if (_a == 0 && _b == 0 && _c != 0) {
             cout << 4 << endl;
+            return;
         }
         if (_a == 0) {
             cout << 6 << '\n';
-            cout << -_c/_b << endl;
+            float a1 = (-_c)/_b;
+            cout << a1 << endl;
+            return;
         }
 
         float d = _b*_b - 4*_a*_c;
         if (d > 0) {
             cout << 1 << '\n';
             cout << (-_b + sqrt(d))/2*_a << ' ' << (-_b - sqrt(d))/2*_a << endl;
+            return;
         }
         if (d = 0) {
             cout << 2 << '\n';
             cout << -_b/2*_a << endl;
+            return;
         }
         if (d < 0) {
             cout << 3 << endl;
+            return;
         }
     }
 };
