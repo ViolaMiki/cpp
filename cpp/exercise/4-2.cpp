@@ -19,7 +19,8 @@ public:
         do {
             int single = _num%10;
             num = num * 10 + single;
-        } while (num /= 10 > 0)
+        } while ((_num /= 10) > 0);
+        return num;
     }
 };
  
