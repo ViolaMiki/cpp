@@ -11,6 +11,7 @@ public:
     Equation(int a, int b, int c):_a(a),_b(b),_c(c){
     }
     void solve(){
+        double a = _a, b = _b, c = _c;
         cout.precision(2);
         if (_a == 0 && _b == 0 && _c == 0) {
             cout << 5 << endl;
@@ -22,20 +23,19 @@ public:
         }
         if (_a == 0) {
             cout << 6 << '\n';
-            float a1 = (-_c)/_b;
-            cout << a1 << endl;
+            cout << -c/b << endl;
             return;
         }
 
-        float d = _b*_b - 4*_a*_c;
+        double d = b*b - 4*a*c;
         if (d > 0) {
             cout << 1 << '\n';
-            cout << (-_b + sqrt(d))/2*_a << ' ' << (-_b - sqrt(d))/2*_a << endl;
+            cout << (-b + sqrt(d))/2*a << ' ' << (-b - sqrt(d))/2*a << endl;
             return;
         }
         if (d = 0) {
             cout << 2 << '\n';
-            cout << -_b/2*_a << endl;
+            cout << -b/2*a << endl;
             return;
         }
         if (d < 0) {
