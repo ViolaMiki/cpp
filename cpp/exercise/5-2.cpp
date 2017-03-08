@@ -3,8 +3,19 @@
 using namespace std;
   
 class Mouse{
-/* Your code here! */
+private:
+    static int num;
+public:
+    Mouse() {
+        num++;
+    }
+    Mouse(const &mouse) {
+        num++;
+    }
+    friend int main();
+    friend void fn(Mouse m);
 };
+int Mouse::num = 0;
   
 void fn(Mouse m);
   
