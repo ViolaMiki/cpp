@@ -17,12 +17,16 @@ public:
             cout << 5 << endl;
             return;
         }
-        if (_a == 0 && _b == 0 && _c != 0) {
+        if ((_a == 0 && _b == 0 && _c != 0) || (b == 0 && a*c >0) ) {
             cout << 4 << endl;
             return;
         }
         if (_a == 0) {
             cout << 6 << '\n';
+            if (c == 0) {
+                cout << 0 << endl;
+                return;
+            }
             cout << -c/b << endl;
             return;
         }
@@ -33,7 +37,7 @@ public:
             cout << (-b + sqrt(d))/2*a << ' ' << (-b - sqrt(d))/2*a << endl;
             return;
         }
-        if (d = 0) {
+        if (d == 0) {
             cout << 2 << '\n';
             cout << -b/2*a << endl;
             return;
