@@ -9,8 +9,11 @@ public:
     Mouse() {
         num++;
     }
-    Mouse(const &mouse) {
+    Mouse(const Mouse &mouse) {
         num++;
+    }
+    ~Mouse() {
+        num--;
     }
     friend int main();
     friend void fn(Mouse m);
