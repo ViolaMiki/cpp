@@ -4,25 +4,33 @@ using namespace std;
   
 class Yuebao
 {
-static double profitRate;
-double profit;
+private:
+    static double profitRate;
+    double _profit;
 public:
-    static void setProfitRate(double rate):profitRate(rate);
+    static void setProfitRate(double rate);
 /* Your code here! */
+    Yuebao(int profit):_profit(profit){}
     void addProfit() {
-        profit += profit*profitRate;
+        _profit += _profit * profitRate;
     }
     void deposit(double amount) {
-        profit += amount;
+        _profit += amount;
     }
     void withdraw(double amount) {
-        profit -= amount;
+        if (_profit > amount) {
+            _profit -= amount;
+        }
     }
     double getBalance() {
-        return profit;
+        return _profit;
     }
 };
-  
+double Yuebao::profitRate = 0.00;
+void Yuebao::setProfitRate(double rate) {
+    profitRate = rate;
+}
+
 int main()
 {
     int n;
