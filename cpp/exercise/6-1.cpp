@@ -11,7 +11,7 @@ int main() {
         cin >> *(p++);
     }
     long sum[num];
-    long max_num;
+    long max_num = 0;
     long *sum_p = sum;
     *sum_p = 0;
     p = arr;
