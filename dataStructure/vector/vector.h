@@ -1,4 +1,4 @@
-#prama once
+#pragma once
 
 typedef int Rank;
 #define DEFAULT_CAPACITY 3
@@ -34,14 +34,13 @@ template <typename T> class Vector {
         ~Vector() { delete [] _elem; }
     //只读访问接口
         Rank size() const { return _size; }//规模
-        bool empty const { return !_size; }//判空
+        bool empty() const { return !_size; }//判空
         int disordered() const;//判断向量是否已排序
         Rank find ( T const& e ) const { return find ( e, 0, _size ); }//无序向量整体查找
         Rank find ( T const& e, Rank lo, Rank hi ) const;//无序向量区间查找
         Rank search ( T const& e ) const //有序向量整体查找
         { return ( 0 >= _size ) ? -1 : search ( e, 0, _size ); }
-        Rank search ( T const& e, Rank lo, Rank hi ) const; //有序向量区间查找
-    //可写访问接口
+        Rank search ( T const& e, Rank lo, Rank hi ) const; //有序向量区间查找 //可写访问接口
         T& operator[] ( int position ) const; //重载下表操作符，可以类似于数组形式引用各函数
         Vector<T> & operator= ( Vector<T> const& ); //重载赋值操作符，以便直接克隆向量
         T remove ( Rank r); //删除秩为r的元素

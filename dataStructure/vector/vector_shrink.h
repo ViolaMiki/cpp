@@ -1,7 +1,7 @@
-#prama once
+#pragma once
 
 template <typename T> 
-class Vector::strink() {
+void Vector<T>::shrink() {
     if ( _capacity < DEFAULT_CAPACITY << 1 ) return;
     if ( _size << 2 > _capacity ) return;
     T* oldElem = _elem; _elem = new T[_capacity >>= 1];

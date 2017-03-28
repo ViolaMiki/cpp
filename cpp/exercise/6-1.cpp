@@ -17,7 +17,7 @@ int main() {
     p = arr;
     point = num;
     while (point--) {
-        if (*p > 0) {
+        if (*p >= 0) {
             *sum_p += *p;
         } else {
             *(++sum_p) = 0; 
@@ -26,9 +26,11 @@ int main() {
         }
         ++p;
     }
+    *(++sum_p) = 0; 
     sum_p = sum;
     long result = 0;
     while (num--) {
+        cout << *sum_p << '\n';
         if (*sum_p == 0) {
             if (result == 0) {
                 result = max_num;break;

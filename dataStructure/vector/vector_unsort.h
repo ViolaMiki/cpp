@@ -1,5 +1,7 @@
-#prama once
+#pragma once
+#include <stdlib.h>
 
+using namespace std;
 template <typename T>
 void Vector<T>::unsort( Rank lo, Rank hi ) {
     T* V = _elem + lo;

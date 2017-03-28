@@ -1,4 +1,4 @@
-#prama once
+#pragma once
 
 template <typename T>
 Vector<T>& Vector<T>::operator= ( Vector<T> const& V ) {
@@ -9,5 +9,5 @@ Vector<T>& Vector<T>::operator= ( Vector<T> const& V ) {
 
 template <typename T>
 T& Vector<T>::operator[] ( Rank R ) const
-{ return _elem[r]; }
+{ return _elem[R]; }
 
