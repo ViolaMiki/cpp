@@ -2,12 +2,12 @@
 
 template <typename T>
 ListNodePosi(T) List<T>::insertAsFirst(T const& e) {
-    _size++;return header->insertAsPred(e);
+    _size++;return header->insertAsSucc(e);
 }
 
 template <typename T>
 ListNodePosi(T) List<T>::insertAsLast(T const& e) {
-    _size++;return trailer->insertAsSucc(e);
+    _size++;return trailer->insertAsPred(e);
 }
 
 template <typename T>
