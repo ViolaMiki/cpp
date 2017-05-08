@@ -11,7 +11,7 @@ protected:
    void init(); //列表创建时的初始化
    int clear(); //清楚所有节点
    void copyNodes ( ListNodePosi(T), int ); //复制列表中自位置p起的n项
-   void merge ( ListNodePosi(T)&, int, List<T>&, ListNodePosi(T), int ); //归并
+   void merge ( ListNodePosi(T), int, List<T>&, ListNodePosi(T), int ); //归并
    void mergeSort ( ListNodePosi(T)&, int ); //对从p开始连续的n个节点归并排序
    void selectionSort ( ListNodePosi(T), int ); //对从p开始连续的n个节点选择排序
    void insertionSort ( ListNodePosi(T), int ); //对从p开始连续的n个节点插入排序

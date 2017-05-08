@@ -13,7 +13,11 @@ int main() {
     list.insertAsLast(4);
     list.insertAsLast(5);
     list.insertAsLast(6);
-    cout << list.search(1, 5, list.last())->data << endl;
+    List<int> list1;
+    list1.insertAsLast(3);
+    list1.insertAsLast(5);
+    list1.insertAsLast(7);
+    list.merge(list);
     list.traverse( &print );
     return 0;
 }
